@@ -8,6 +8,7 @@ defmodule ElixirBlog.Repo.Migrations.CreateUsers do
       add :password_hash, :string, null: false
 
       timestamps()
+    end
 
   end
 end
