@@ -3,7 +3,7 @@ defmodule ElixirBlog.Accounts.Commands.UpdateUser do
     Defines update user command
     """
   
-    alias ElixirBlog.Accounts.Entitites.User
+    alias ElixirBlog.Accounts.Entities.User
     alias ElixirBlog.Repo
   
     def process(%User{} = user, attrs) do

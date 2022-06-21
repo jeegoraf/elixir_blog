@@ -2,7 +2,7 @@ defmodule ElixirBlog.Accounts.Commands.DeleteUser do
     @moduledoc """
     Defines delete user command
     """
-    alias ElixirBlog.Accounts.Entitites.User
+    alias ElixirBlog.Accounts.Entities.User
     alias ElixirBlog.Repo
   
     def process(%User{} = user) do

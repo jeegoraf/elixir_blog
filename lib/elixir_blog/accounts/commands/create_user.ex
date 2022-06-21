@@ -3,7 +3,7 @@ defmodule ElixirBlog.Accounts.Commands.CreateUser do
     Defines create user command
     """
   
-    alias ElixirBlog.Accounts.Entitites.User
+    alias ElixirBlog.Accounts.Entities.User
     alias ElixirBlog.Repo
   
     def process(attrs) do
