@@ -13,7 +13,20 @@ defmodule ElixirBlog.Accounts.Entities.User do
   end
 
   @doc false
-  def changeset(user, attrs) do
+  def create_changeset(user, attrs) do
+    user
+    |> cast(attrs, @required) # создает changeset (attrs - изменение, @required - поля, которые можно изменять)
+    |> validate_required(@required) # проверяет, что обязательные поля всегда присутствуют
+    |> unique_constraint(:email, message: "taken") # проверяет email на уникальность
+    |> validate_format(:password, ~r/^(?=.*\d)(?=.*[a-z])(?=.*[a-zA-Z]).{8,}/,
+      message: "invalid_password_format"
+    )
+    |> put_password_hash() # хэширование пароля
+
+  end
+
+  
+  def update_changeset(%__MODULE__{} = user, attrs) do
     user
     |> cast(attrs, @required)
     |> validate_required(@required)
@@ -22,7 +35,6 @@ defmodule ElixirBlog.Accounts.Entities.User do
       message: "invalid_password_format"
     )
     |> put_password_hash()
-
   end
 
   defp put_password_hash(%{valid?: true, changes: %{password: password}} = changeset) do
