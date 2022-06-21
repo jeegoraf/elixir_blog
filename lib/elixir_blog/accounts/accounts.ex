@@ -1,15 +1,15 @@
-defmodule Elixirblog.Accounts do
+defmodule ElixirBlog.Accounts do
     @moduledoc """
     Describes the context of the account
     """
   
-    alias Elixirblog.Accounts.Commands.{
+    alias ElixirBlog.Accounts.Commands.{
       CreateUser,
       DeleteUser,
       UpdateUser
     }
   
-    alias Elixirblog.Accounts.Queries.{
+    alias ElixirBlog.Accounts.Queries.{
       GetUser,
       ListUsers
     }

@@ -4,7 +4,7 @@ defmodule ElixirBlog.Accounts.Entities.User do
 
   @required [:email, :password]
 
-  schema "user" do
+  schema "users" do
     field :email, :string
     field :password, :string, virtual: true
     field :password_hash, :string
