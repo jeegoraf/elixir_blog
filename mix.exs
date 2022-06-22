@@ -49,7 +49,9 @@ defmodule ElixirBlog.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:argon2_elixir, "~> 3.0"}
+      {:argon2_elixir, "~> 3.0"},
+      {:ex_machina, "~> 2.7.0", only: [:test]},
+      {:faker, "~> 0.13", only: [:test]}
     ]
   end
 
