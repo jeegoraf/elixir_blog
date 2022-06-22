@@ -24,6 +24,7 @@ defmodule ElixirBlog.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import ElixirBlog.DataCase
+      import ElixirBlog.Factories
     end
   end
 
