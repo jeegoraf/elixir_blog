@@ -10,7 +10,7 @@ defmodule ElixirBlog.Accounts.Entities.User do
     field :email, :string
     field :password, :string, virtual: true
     field :password_hash, :string
-    has_many :posts, Post
+    has_many :posts, Post, on_delete: :delete_all
 
     timestamps()
   end
