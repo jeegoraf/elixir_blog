@@ -21,5 +21,5 @@ defmodule ElixirBlog.Posts do
   
     # Queries
     defdelegate get_post(id), to: GetPost, as: :process
-    defdelegate list_posts(), to: ListUsers, as: :process
+    defdelegate list_posts(), to: ListPosts, as: :process
   end
