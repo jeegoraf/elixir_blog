@@ -23,6 +23,7 @@ defmodule ElixirBlog.Posts.Entities.Post do
       |> cast(attrs, @required) 
       |> validate_required(@required)
       |> assoc_constraint(:user) # проверка на существование связанного поля
+      |> foreign_key_constraint(:user_id, name: :posts_user_id_fkey, message: "not associated with any user")
     end
   
     
@@ -31,5 +32,6 @@ defmodule ElixirBlog.Posts.Entities.Post do
       |> cast(attrs, @required)
       |> validate_required(@required)
       |> assoc_constraint(:user)
+      |> foreign_key_constraint(:user_id, name: :posts_user_id_fkey, message: "not associated with any user")
     end
   end
