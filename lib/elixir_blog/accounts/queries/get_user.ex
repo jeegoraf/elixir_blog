@@ -7,6 +7,14 @@ defmodule ElixirBlog.Accounts.Queries.GetUser do
     alias ElixirBlog.Accounts.Entities.User
   
     def process(id) do
-      Repo.find(User, id)
+      res = User
+      |>Repo.get(id)
+      |>Repo.preload([:posts])
+      
+      case res do
+        %{} -> {:ok, res}
+        _ -> {:error, :not_found}
+      
+      end
     end
   end

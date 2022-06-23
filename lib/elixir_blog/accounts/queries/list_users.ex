@@ -8,6 +8,9 @@ defmodule ElixirBlog.Accounts.Queries.ListUsers do
     alias ElixirBlog.Accounts.Entities.User
   
     def process() do
-      Repo.all(User)
+      res = User
+      |>Repo.all()
+      |>Repo.preload([:posts])
+      
     end
   end
