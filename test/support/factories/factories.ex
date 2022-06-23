@@ -4,7 +4,8 @@ defmodule ElixirBlog.Factories do
     """
     use ExMachina.Ecto, repo: ElixirBlog.Repo
   
-    use ElixirBlog.Factories.Accounts.{
-      UserFactory
+    use ElixirBlog.Factories.{
+      Accounts.UserFactory,
+      Posts.PostFactory
     }
   end
