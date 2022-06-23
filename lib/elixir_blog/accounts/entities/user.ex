@@ -2,12 +2,15 @@ defmodule ElixirBlog.Accounts.Entities.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias ElixirBlog.Posts.Entities.Post
+
   @required [:email, :password]
 
   schema "users" do
     field :email, :string
     field :password, :string, virtual: true
     field :password_hash, :string
+    has_many :posts, Post
 
     timestamps()
   end
