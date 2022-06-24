@@ -6,6 +6,9 @@ defmodule ElixirBlog.Repo.Migrations.CreatePostsTags do
     create table(:posts_tags) do
       add :post_id, references(:posts)
       add :tag_id, references(:tags)
+
+      timestamps()
+
     end
 
     create unique_index(:posts_tags, [:post_id, :tag_id])
