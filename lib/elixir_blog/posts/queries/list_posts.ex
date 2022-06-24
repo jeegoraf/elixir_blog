@@ -9,6 +9,6 @@ defmodule ElixirBlog.Posts.Queries.ListPosts do
     def process() do
       Post
       |>Repo.all()
-      |>Repo.preload([:user])
+      |>Repo.preload([:user, :tags])
     end
   end

@@ -9,6 +9,6 @@ defmodule ElixirBlog.Posts.Queries.GetPost do
     def process(id) do
       Post
       |>Repo.get(id)
-      |>Repo.preload([:user])
+      |>Repo.preload([:user, :tags])
     end
   end
