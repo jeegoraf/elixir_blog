@@ -16,6 +16,8 @@ defmodule ElixirBlog.Tags.Entities.Tag do
       field :name, :string
       timestamps()
 
+      many_to_many :posts, Post, join_through: "posts_tags", on_delete: :nothing
+
     end
   
     def create_changeset(%__MODULE__{} = tag_entity, attrs) do
