@@ -64,6 +64,10 @@ config :elixir_blog, ElixirBlogWeb.Endpoint,
     ]
   ]
 
+
+config :elixir_blog, ElixirBlog.Accounts.Guardian, 
+  secret_key: "N2QVQc/Kinq+7Fp0XSgNYBD2klumW9xGJ2HOjdlg30yzxCBUci13q8K43yRYRiS9"
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
@@ -73,3 +77,4 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+

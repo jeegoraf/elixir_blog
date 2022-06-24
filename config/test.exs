@@ -23,6 +23,9 @@ config :elixir_blog, ElixirBlogWeb.Endpoint,
 # In test we don't send emails.
 config :elixir_blog, ElixirBlog.Mailer, adapter: Swoosh.Adapters.Test
 
+config :elixir_blog, ElixirBlog.Accounts.Guardian, 
+  secret_key: "N2QVQc/Kinq+7Fp0XSgNYBD2klumW9xGJ2HOjdlg30yzxCBUci13q8K43yRYRiS9"
+
 # Print only warnings and errors during test
 config :logger, level: :warn
 
