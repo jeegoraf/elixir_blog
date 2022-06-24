@@ -1,4 +1,4 @@
-defmodule PostTag do
+defmodule ElixirBlog.PostsTags.Entities.PostTag do
     @moduledoc """
     Determines booktag shema - relation between books and tags
     """
@@ -22,12 +22,22 @@ defmodule PostTag do
       timestamps()
     end
   
-    def changeset(%__MODULE__{} = book_tag, attrs \\ %{}) do
-      book_tag
+    def create_changeset(%__MODULE__{} = post_tag, attrs \\ %{}) do
+      post_tag
       |> cast(attrs, @required)
       |> validate_required(@required)
       |> assoc_constraint(:post)
       |> assoc_constraint(:tag)
       |> unique_constraint([:post, :tag], message: "taken")
     end
+
+    def update_changeset(%__MODULE__{} = post_tag, attrs \\ %{}) do
+        post_tag
+        |> cast(attrs, @required)
+        |> validate_required(@required)
+        |> assoc_constraint(:post)
+        |> assoc_constraint(:tag)
+        |> unique_constraint([:post, :tag], message: "taken")
+      end
+  
   end
