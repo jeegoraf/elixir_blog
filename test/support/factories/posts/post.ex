@@ -21,12 +21,15 @@ defmodule ElixirBlog.Factories.Posts.PostFactory do
 
           user_id = Map.get(attrs, :user_id, 0)
 
+          tags = Map.get(attrs, :tags, [])
+
   
           %Post{
             title: title,
             author: author,
             body: body, 
-            user_id: user_id
+            user_id: user_id,
+            tags: tags
           }
         end
       end
